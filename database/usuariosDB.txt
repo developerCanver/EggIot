@@ -1,0 +1,1 @@
+INSERT INTO `role_users` (`id`, `nameRol`, `created_at`, `updated_at`) VALUES (NULL, 'Admin', '2021-05-14 20:18:52', '2021-05-14 20:18:52'), (NULL, 'Funcionario', '2021-05-20 20:18:52', '2021-05-20 20:18:52');

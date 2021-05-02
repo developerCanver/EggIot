@@ -1,11 +1,15 @@
 <?php
 
-namespace App\Models\Iot;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Peso extends Model
+class RoleUser extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nameRol',   
+    ];
+
 }

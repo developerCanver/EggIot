@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePesosTable extends Migration
+class CreateEggsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,16 @@ class CreatePesosTable extends Migration
      */
     public function up()
     {
-        Schema::create('pesos', function (Blueprint $table) {
+        Schema::create('eggs', function (Blueprint $table) {
             $table->id();
-            $table->integer('codigo');
-            $table->string('peso');
+            $table->integer('code');
+            $table->string('weight');
+            $table->unsignedBigInteger('iots_id');   
             $table->timestamps();
+            
+            $table->foreign('iots_id')->references('id')->on('iots')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 
@@ -28,6 +33,6 @@ class CreatePesosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pesos');
+        Schema::dropIfExists('eggs');
     }
 }
