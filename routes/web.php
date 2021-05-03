@@ -24,3 +24,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
  //Peso
  Route::resource('/peso',    'Planeacion\RequisitosController');
+
+Route::get('/distribuidora', function () {
+    return view('distribuidora');
+})->middleware('auth');

@@ -23,6 +23,7 @@
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/asset/plugins/bower_components/sweetalert/sweetalert.css') }} rel="stylesheet" type="text/css">
     <!-- color CSS -->
     <link href="{{ asset('css/colors/default.css') }}" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -284,6 +285,10 @@
     </div>
     @livewireScripts
 
+
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+       {{-- <script src="{{ asset('assets/plugins/bower_components/sweetalert/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js') }}"></script> --}}
     <!-- /#wrapper -->
     <!-- jQuery -->
     <script src="{{ asset('assets/plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>

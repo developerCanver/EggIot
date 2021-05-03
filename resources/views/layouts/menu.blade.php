@@ -57,6 +57,8 @@
                     </li> --}}
                 </ul>
             </li>
+            <li><a href="{{ url('usuarios')}}" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">Usuarios</span></a></li>
+            <li><a href="{{ url('distribuidora')}}" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">Distribuidora</span></a></li>
             {{-- <li>
                 <a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">UI Elements<span class="fa arrow"></span> <span class="label label-rouded label-info pull-right">13</span> </span></a>
                 <ul class="nav nav-second-level">
