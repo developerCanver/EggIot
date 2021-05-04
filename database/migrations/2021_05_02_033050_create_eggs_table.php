@@ -14,13 +14,13 @@ class CreateEggsTable extends Migration
     public function up()
     {
         Schema::create('eggs', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id_egg');
             $table->integer('code');
             $table->string('weight');
             $table->unsignedBigInteger('iots_id');   
             $table->timestamps();
             
-            $table->foreign('iots_id')->references('id')->on('iots')
+            $table->foreign('iots_id')->references('id_iot')->on('iots')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });

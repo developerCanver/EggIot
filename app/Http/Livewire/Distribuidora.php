@@ -5,14 +5,18 @@ namespace App\Http\Livewire;
 use App\Models\Distributor;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 use Illuminate\Support\Facades\DB;
 
 
 class Distribuidora extends Component
 {
+    use WithPagination;
     protected $paginationTheme = 'bootstrap';
+    
     public $isOpen=false;
+  
 
     public $primary,$nameDistributor,$phone,$img,$user_id,$colorModal,$direction;
 
@@ -67,8 +71,8 @@ class Distribuidora extends Component
     }
     public function edit($id){
         $this->updateMode = true;
-        $editar= Distributor::where('id',$id)->first();
-     
+        $editar= Distributor::where('id_distributor',$id)->first();
+      
         $this->primary = $id;
         $this->nameDistributor = $editar->nameDistributor;
         $this->phone = $editar->phone;
@@ -88,7 +92,7 @@ class Distribuidora extends Component
             'user_id' => 'required',
              ]);
         // dd($this->imagen_id);
-         $guardar= Distributor::find($id); 
+         $guardar=Distributor::where('id_distributor',$id)->first();
 
         $guardar->nameDistributor=$this->nameDistributor;  
         $guardar->phone=$this->phone;

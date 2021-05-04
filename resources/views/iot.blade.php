@@ -2,6 +2,7 @@
 
 @section('content')
 
+@livewire('iot')
 
 
 @endsection

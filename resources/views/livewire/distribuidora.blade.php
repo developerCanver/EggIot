@@ -2,7 +2,7 @@
 
     <div class="row bg-title m-3">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Distribuidora //{{$isOpen}}</h4>
+            <h4 class="page-title">Distribuidora </h4>
         </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <a href="http://wrappixel.com/templates/pixeladmin/" target="_blank"
@@ -44,8 +44,8 @@
                         @error('nameDistributor') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput2">Telefono</label>
-                        <input type="text" class="form-control" wire:model="phone" id="exampleFormControlInput2">
+                        <label for="exampleFormControlInput2">Teléfono</label>
+                        <input type="number" class="form-control" wire:model="phone" id="exampleFormControlInput2">
                         @error('phone') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     <div class="form-group">
@@ -54,13 +54,6 @@
                         @error('direction') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
 
-                    {{--
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput2">Imagen</label>
-                                    <input type="file" class="form-control" wire:model="img" id="exampleFormControlInput2">
-                                    @error('img') <span class="text-danger">{{ $message }}</span>@enderror
-                </div>
-                --}}
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="exampleFormControlInput2">Tipo Usuario</label>
@@ -107,7 +100,7 @@
                         <tr>
                             <th>#ID </th>
                             <th>Nombre</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Dirección</th>
                             {{-- <th>Img</th> --}}
                             <th>Usuario Admin</th>
@@ -121,7 +114,7 @@
                                 <input type="checkbox" wire:model="eliminarselect" onclick="myFunction()" name="chk" id="myCheck"
                                     value="{{$consulta->id_user}}">
                             </td> --}}
-                            <td>{{$consulta->id}}</td>
+                            <td>{{$consulta->id_distributor}}</td>
                             <td>{{$consulta->nameDistributor}}</td>
                             <td>{{$consulta->phone}}</td>
                             <td>{{$consulta->direction}}</td>
@@ -130,9 +123,9 @@
 
                             <td>
                                 <button data-toggle="modal" data-target="#updateModal"
-                                    wire:click="edit({{ $consulta->id }})" class="btn btn-primary btn-sm">Edit</button>
+                                    wire:click="edit({{ $consulta->id_distributor }})" class="btn btn-primary btn-sm">Edit</button>
 
-                                <button onclick="MuestraAlert({{$consulta->id}})" class="btn btn-danger btn-sm">
+                                <button onclick="MuestraAlert({{$consulta->id_distributor}})" class="btn btn-danger btn-sm">
                                     Eliminar
                                 </button>
                             </td>
@@ -141,6 +134,13 @@
 
                     </tbody>
                 </table>
+                <p>
+                    Resultado {{$consultas->firstItem()}} - {{$consultas->lastItem()}} / {{$consultas->total()}}
+                </p>
+            <div class="rol">
+                {{ $consultas->links() }}
+            </div>
+       
 
                 {{-- modal para editar cada tarjeta--}}
                 <div wire:ignore.self class="modal fade" id="updateModal" tabindex="-1" role="dialog"
@@ -162,8 +162,8 @@
                                     @error('nameDistributor') <span class="text-danger">{{ $message }}</span>@enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput2">Telefono</label>
-                                    <input type="text" class="form-control" wire:model="phone"
+                                    <label for="exampleFormControlInput2">Teléfono</label>
+                                    <input type="number" class="form-control" wire:model="phone"
                                         id="exampleFormControlInput2">
                                     @error('phone') <span class="text-danger">{{ $message }}</span>@enderror
                                 </div>

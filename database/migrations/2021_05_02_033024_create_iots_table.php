@@ -14,13 +14,13 @@ class CreateIotsTable extends Migration
     public function up()
     {
         Schema::create('iots', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id_iot');
             $table->string('nameIot');        
             $table->string('status',1);
             $table->unsignedBigInteger('distributor_id');   
             $table->timestamps();
             
-            $table->foreign('distributor_id')->references('id')->on('distributors')
+            $table->foreign('distributor_id')->references('id_distributor')->on('distributors')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });

@@ -22,10 +22,12 @@
     <!-- animation CSS -->
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
+    <link href="{{ asset('/assets/plugins/bower_components/switchery/dist/switchery.min.css') }}"  rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('/asset/plugins/bower_components/sweetalert/sweetalert.css') }} rel="stylesheet" type="text/css">
     <!-- color CSS -->
     <link href="{{ asset('css/colors/default.css') }}" id="theme" rel="stylesheet">
+ 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,7 +35,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
      <!-- Styles -->
-     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
 
      @livewireStyles
 

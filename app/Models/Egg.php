@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Egg extends Model
 {
     use HasFactory;
+    protected $primaryKey   = 'id_egg';
     protected $fillable = [
         'code',
         'weight',

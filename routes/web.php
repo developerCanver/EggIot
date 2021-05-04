@@ -28,3 +28,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/distribuidora', function () {
     return view('distribuidora');
 })->middleware('auth');
+
+Route::get('/usuarios', function () {
+    return view('usuarios');
+})->middleware('auth');
+
+Route::get('/iot', function () {
+    return view('iot');
+})->middleware('auth');

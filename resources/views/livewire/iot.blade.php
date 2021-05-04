@@ -2,7 +2,7 @@
 
     <div class="row bg-title m-3">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Usuarios</h4>
+            <h4 class="page-title">Iot</h4>
         </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <a href="http://wrappixel.com/templates/pixeladmin/" target="_blank"
@@ -10,7 +10,7 @@
                 Now</a>
             <ol class="breadcrumb">
                 <li><a href="{{url('/')}}">Dashboard</a></li>
-                <li class="active">Usuarios</li>
+                <li class="active">Iot</li>
             </ol>
         </div>
         <!-- /.col-lg-12 -->
@@ -21,7 +21,7 @@
     <div class="row m-5">
         <div class="col-11">
             <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#exampleModal"
-                data-whatever="@mdo">Agregar Usuario</button>
+                data-whatever="@mdo">Agregar Iot</button>
         </div>
     </div>
     <br>
@@ -38,41 +38,40 @@
                 <div class="modal-body">
 
 
-                    <div class="form-group">
-                        <input type="hidden" wire:model="user_id">
+                    <div class="form-group">                       
                         <label for="exampleFormControlInput1">Nombre:</label>
-                        <input type="text" class="form-control" wire:model="name">
-                        @error('name') <span class="text-danger">{{ $message }}</span>@enderror
+                        <input type="text" class="form-control" wire:model="nameIot">
+                        @error('nameIot') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput2">Correo</label>
-                        <input type="email" class="form-control" wire:model="email" id="exampleFormControlInput2">
-                        @error('email') <span class="text-danger">{{ $message }}</span>@enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput2">Contraseña</label>
-                        <input type="password" class="form-control" wire:model="password" id="exampleFormControlInput2">
-                        @error('password') <span class="text-danger">{{ $message }}</span>@enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput2">Imagen</label>
-                        <input type="file" class="form-control" wire:model="profile_photo_path"
-                            id="exampleFormControlInput2">
-                        @error('profile_photo_path') <span class="text-danger">{{ $message }}</span>@enderror
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1">Estado:</label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio1" name="animal" wire:model="status" value="1"
+                                class="custom-control-input" checked>
+                            <label class="custom-control-label text-xs" for="customRadio1">Activo</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" wire:model="status" name="animal" value="0"
+                                class="custom-control-input">
+                            <label class="custom-control-label text-xs" for="customRadio2">Desactivada</label>
+                        </div>
+                        @error('status') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="exampleFormControlInput2">Tipo Usuario</label>
-                            <select wire:model="rol_id">
-                                <option value="" selected>Seleccione Tipo usuario...</option>
-                                @foreach ($roles as $rol)
-                                <option value="{{$rol->id_rol}}">{{$rol->nameRol}}</option>
+                            <label for="exampleFormControlInput2">Distribuidora</label>
+                            <select wire:model="distributor_id">
+                                <option value="" selected>Seleccione Distribuidora...</option>
+                                @foreach ($distribuidoras as $distribuidora)
+                                <option value="{{$distribuidora->id_distributor}}">{{$distribuidora->nameDistributor}}</option>
                                 @endforeach
                             </select>
-                            @error('rol_id') <span class="text-danger">{{ $message }}</span>@enderror
+                            @error('distributor_id') <span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
+
+                    
                     <div class="modal-footer">
                         <button type="button" style="background: #ffffff;color:#1a2942;"
                             class="btn btn-secondary close-btn" data-dismiss="modal">Cancelar</button>
@@ -106,28 +105,33 @@
                         <thead>
                             <tr>
                                 <th>#ID </th>
-                                <th>Img </th>
                                 <th>Nombre</th>
-                                <th>Correo</th>
-                                <th>Rol Usuario</th>
+                                <th>Estado</th>
+                                <th>Distribuidora</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($consultas as $consulta)
                             <tr>
-                                <td>{{$consulta->id}}</td>
-                                <td>{{$consulta->profile_photo_path}}</td>
-                                <td>{{$consulta->name}}</td>
-                                <td>{{$consulta->email}}</td>
-                                <td>{{$consulta->nameRol  }}</td>
+                                <td>{{$consulta->id_iot}}</td>
+                                <td>{{$consulta->nameIot}}</td>
+                                <td>
+                                @if ($consulta->status == 1)
+                                <span class="label label-rouded label-success pull">On</span>
+                                @else
+                                <span class="label label-rouded label-danger pull">Off</span>
+                                @endif
+                            </td>
+                               
+                                <td>{{$consulta->nameDistributor  }}</td>
 
                                 <td>
                                     <button data-toggle="modal" data-target="#updateModal"
-                                        wire:click="edit({{ $consulta->id }})"
+                                        wire:click="edit({{ $consulta->id_iot }})"
                                         class="btn btn-primary btn-sm">Edit</button>
 
-                                    <button onclick="MuestraAlert({{$consulta->id}})" class="btn btn-danger btn-sm">
+                                    <button onclick="MuestraAlert({{$consulta->id_iot}})" class="btn btn-danger btn-sm">
                                         Eliminar
                                     </button>
                                 </td>
@@ -155,41 +159,36 @@
                         </div>
                             <div class="modal-body">
 
-                                <div class="form-group">                                   
+                                <div class="form-group">                       
                                     <label for="exampleFormControlInput1">Nombre:</label>
-                                    <input type="text" class="form-control" wire:model="name">
-                                    @error('name') <span class="text-danger">{{ $message }}</span>@enderror
+                                    <input type="text" class="form-control" wire:model="nameIot">
+                                    @error('nameIot') <span class="text-danger">{{ $message }}</span>@enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput2">Telefono</label>
-                                    <input type="email" class="form-control" wire:model="email"
-                                        id="exampleFormControlInput2">
-                                    @error('email') <span class="text-danger">{{ $message }}</span>@enderror
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1">Estado:</label>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="animal" wire:model="status" value="1"
+                                            class="custom-control-input" checked>
+                                        <label class="custom-control-label text-xs" for="customRadio1">Activo</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" wire:model="status" name="animal" value="0"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label text-xs" for="customRadio2">Desactivada</label>
+                                    </div>
+                                    @error('status') <span class="text-danger">{{ $message }}</span>@enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput2">Contraseña</label>
-                                    <input type="password" class="form-control" wire:model="password" id="exampleFormControlInput2">
-                                    @error('password') <span class="text-danger">{{ $message }}</span>@enderror
-                                </div>
-                             
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput2">Dirección</label>
-                                    <input type="file" class="form-control" wire:model="profile_photo_path"
-                                        id="exampleFormControlInput2">
-                                    @error('profile_photo_path') <span
-                                        class="text-danger">{{ $message }}</span>@enderror
-                                </div>
-
+            
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="exampleFormControlInput2">Tipo Usuario</label>
-                                        <select wire:model="rol_id">
-                                            <option value="" selected>Seleccione Tipo usuario...</option>
-                                            @foreach ($roles as $rol)
-                                            <option value="{{$rol->id}}">{{$rol->nameRol}}</option>
+                                        <label for="exampleFormControlInput2">Distribuidora</label>
+                                        <select wire:model="distributor_id">
+                                            <option value="" selected>Seleccione Distribuidora...</option>
+                                            @foreach ($distribuidoras as $distribuidora)
+                                            <option value="{{$distribuidora->id_distributor}}">{{$distribuidora->nameDistributor}}</option>
                                             @endforeach
                                         </select>
-                                        @error('rol_id') <span class="text-danger">{{ $message }}</span>@enderror
+                                        @error('distributor_id') <span class="text-danger">{{ $message }}</span>@enderror
                                     </div>
                                 </div>
 

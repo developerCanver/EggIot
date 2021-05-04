@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Iot extends Model
 {
     use HasFactory;
+    protected $primaryKey   = 'id_iot';
     protected $fillable = [
         'nameIot',
         'status',
