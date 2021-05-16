@@ -78,8 +78,6 @@ class Distribuidora extends Component
         $this->img = $editar->img;
         $this->direction=$editar->direction;
   
-       
-
     }
     public function update($id)
     {

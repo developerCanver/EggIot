@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/plugins/images/favicon.png') }}">
-    <title>Pixel Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap</title>
+    <title>EggIoT</title>
     <!-- Bootstrap Core CSS  preseta error para los mensajes -->
     <link href="{{ asset('assets/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Menu CSS -->
@@ -27,6 +27,7 @@
     <link href="{{ asset('/asset/plugins/bower_components/sweetalert/sweetalert.css') }} rel="stylesheet" type="text/css">
     <!-- color CSS -->
     <link href="{{ asset('css/colors/default.css') }}" id="theme" rel="stylesheet">
+
  
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -170,9 +171,9 @@
                         <!-- /.dropdown-tasks -->
                     </li>
                     <!-- /.dropdown -->
-                    <li class="hidden-xs"><a href="javascript:void(0)">New</a></li>
+                   
                 </ul>
-                <ul class="nav navbar-top-links navbar-right pull-right">
+                {{-- <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
                         <form role="search" class="app-search hidden-xs m-r-10">
                             <input type="text" placeholder="Search..." class="form-control"> <a href="#"><i class="fa fa-search"></i></a>
@@ -261,7 +262,7 @@
                     <!-- /.Megamenu -->
                     <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>
                     <!-- /.dropdown -->
-                </ul>
+                </ul> --}}
             </div>
             <!-- /.navbar-header -->
             <!-- /.navbar-top-links -->
@@ -320,8 +321,18 @@
     <!-- Sparkline chart JavaScript -->
     <script src="{{ asset('assets/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js') }}"></script>
+
+
+
+
+
+
+
     <script src="{{ asset('assets/plugins/bower_components/toast-master/js/jquery.toast.js') }}"></script>
-    <script type="text/javascript">
+    <script src="{{ asset('js/morris-data.js') }}"></script>
+
+
+    {{-- <script type="text/javascript">
     $(document).ready(function() {
         $.toast({
             heading: 'Welcome to Pixel admin',
@@ -333,7 +344,7 @@
             stack: 6
         })
     });
-    </script>
+    </script> --}}
     <!--Style Switcher -->
     <script src="{{ asset('assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js') }}"></script>
 </body>

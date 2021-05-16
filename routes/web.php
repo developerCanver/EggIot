@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/inicio', function () {
     return view('welcome');
 })->middleware('auth');
 
@@ -24,6 +24,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
  //Peso
  //Route::resource('/peso',    'Planeacion\RequisitosController');
+
+
+ Route::get('/clasificacion', function () {
+    return view('clasificacion');
+})->middleware('auth');
 
 
  Route::get('/huevos', function () {

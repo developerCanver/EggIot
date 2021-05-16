@@ -34,11 +34,17 @@
                 <!-- /input-group -->
             </li>
            
-            <li><a href="index.html" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">Dashboard</span></a></li>
+            <li><a href="{{ url('inicio')}}" class="waves-effect"><i  class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">Inicio</span></a></li>
+
+            <li><a href="{{ url('usuarios')}}" class="waves-effect"><i class="linea-icon linea-basic icon-user" ></i> <span class="hide-menu">Usuarios</span></a></li>
+            <li><a href="{{ url('distribuidora')}}" class="waves-effect"><i class="linea-icon linea-basic  icon-location-pin"></i> <span class="hide-menu">Distribuidora</span></a></li>
+            <li><a href="{{ url('iot')}}" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="&#xe000;"></i> <span class="hide-menu">Arduino</span></a></li>
             <li>
-                <a href="inbox.html" class="waves-effect"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">IoT<span class="fa arrow"></span><span class="label label-rouded label-danger pull-right">New</span></span></a>
+                <a href="inbox.html" class="waves-effect"><i data-icon=")" style="padding: 0 4px;
+                font-size: 18px;" class=" fa fa-spin fa-cog"></i> <span class="hide-menu">IoT<span class="fa arrow"></span><span class="label label-rouded label-danger pull-right">New</span></span></a>
                 <ul class="nav nav-second-level">
                     <li><a href="{{ url('huevos')}}">Huevos</a></li>
+                    <li><a href="{{ url('clasificacion')}}">Tipo Clasificación</a></li>
                     {{-- <li>
                         <a href="javascript:void(0)" class="waves-effect">Inbox<span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
@@ -57,9 +63,6 @@
                     </li> --}}
                 </ul>
             </li>
-            <li><a href="{{ url('usuarios')}}" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">Usuarios</span></a></li>
-            <li><a href="{{ url('distribuidora')}}" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">Distribuidora</span></a></li>
-            <li><a href="{{ url('iot')}}" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">IoT</span></a></li>
             {{-- <li>
                 <a href="#" class="waves-effect"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">UI Elements<span class="fa arrow"></span> <span class="label label-rouded label-info pull-right">13</span> </span></a>
                 <ul class="nav nav-second-level">

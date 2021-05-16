@@ -11,6 +11,8 @@ use Livewire\WithPagination;
 class Peso extends Component
 {
     use WithPagination;
+
+    public $id_egg ,$code,$weight,$iots_id ,$created_at;
     public function render()
     {
         $consultas=  DB::table('eggs')
@@ -21,5 +23,16 @@ class Peso extends Component
         return view('livewire.iot.peso',[
             'consultas' => $consultas,
         ]);
+    }
+
+    public  function destroy($id){
+        Egg::destroy($id);            
+        $this->dispatchBrowserEvent('alert',
+        ['type' => 'info',  'message' => 'Eliminado con Exito!  🌝']);
+        $this->cancelar();
+    }
+
+    public function cancelar(){
+        return redirect('/huevos');
     }
 }

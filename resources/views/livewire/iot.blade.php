@@ -130,10 +130,12 @@
                                 <td>
                                     <button data-toggle="modal" data-target="#updateModal"
                                         wire:click="edit({{ $consulta->id_iot }})"
-                                        class="btn btn-primary btn-sm">Edit</button>
+                                        class="btn btn-primary btn-sm">
+                                      <i class="icon-note"></i>
+                                    </button>
 
                                     <button onclick="MuestraAlert({{$consulta->id_iot}})" class="btn btn-danger btn-sm">
-                                        Eliminar
+                                         <i class=" icon-trash"></i>
                                     </button>
                                 </td>
                             </tr>

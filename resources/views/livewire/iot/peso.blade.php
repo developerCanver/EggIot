@@ -117,12 +117,12 @@
                     <thead>
                         <tr>
                             <th>#ID </th>
-                            <th>Codigp </th>
+                            <th>Codigo </th>
                             <th>Peso</th>
                             <th>Iot </th>
                             <th>Fecha</th>
                             <th>Hora</th>
-                            {{-- <th>Acciones</th> --}}
+                           <th>Opción</th> 
                      
                         </tr>
                     </thead>
@@ -135,15 +135,15 @@
                             <td>{{$consulta->nameIot}}</td>
                             <td>{{$consulta->created_at}}</td>
                             <td>{{$consulta->created_at}}</td>
-                            {{-- <td>
-                                <button data-toggle="modal" data-target="#updateModal"
+                             <td>
+                                {{-- <button data-toggle="modal" data-target="#updateModal"
                                     wire:click="edit({{ $consulta->id_egg }})"
-                                    class="btn btn-primary btn-sm">Edit</button>
+                                    class="btn btn-primary btn-sm">Edit</button> --}}
 
                                 <button onclick="MuestraAlert({{$consulta->id_egg}})" class="btn btn-danger btn-sm">
-                                    Eliminar
+                                    <i class=" icon-trash"></i>
                                 </button>
-                            </td> --}}
+                            </td> 
                         </tr>
                         @endforeach
 

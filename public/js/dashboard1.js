@@ -1,58 +1,5 @@
 // Dashboard 1 Morris-chart
 
-Morris.Area({
-        element: 'morris-area-chart',
-        data: [{
-            period: '2010',
-            iphone: 0,
-            ipad: 0,
-            itouch: 0
-        }, {
-            period: '2011',
-            iphone: 130,
-            ipad: 100,
-            itouch: 80
-        }, {
-            period: '2012',
-            iphone: 80,
-            ipad: 60,
-            itouch: 70
-        }, {
-            period: '2013',
-            iphone: 70,
-            ipad: 200,
-            itouch: 160
-        }, {
-            period: '2014',
-            iphone: 180,
-            ipad: 150,
-            itouch: 120
-        }, {
-            period: '2015',
-            iphone: 105,
-            ipad: 100,
-            itouch: 90
-        },
-         {
-            period: '2016',
-            iphone: 250,
-            ipad: 150,
-            itouch: 200
-        }],
-        xkey: 'period',
-        ykeys: ['iphone', 'ipad', 'itouch'],
-        labels: ['iPhone', 'iPad', 'iPod Touch'],
-        pointSize: 0,
-        fillOpacity: 0.6,
-        pointStrokeColors:['#f75b36', '#00b5c2 ', '#008efa'],
-        behaveLikeLine: true,
-        gridLineColor: '#e0e0e0',
-        lineWidth:0,
-        hideHover: 'auto',
-        lineColors: ['#f75b36', '#00b5c2 ', '#008efa'],
-        resize: true
-        
-    });
 /*
 Morris.Area({
         element: 'morris-area-chart2',
