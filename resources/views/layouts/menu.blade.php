@@ -33,12 +33,12 @@
                 </div>
                 <!-- /input-group -->
             </li>
-            <li class="nav-small-cap m-t-10"> Menú</li>
+           
             <li><a href="index.html" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu">Dashboard</span></a></li>
             <li>
                 <a href="inbox.html" class="waves-effect"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">IoT<span class="fa arrow"></span><span class="label label-rouded label-danger pull-right">New</span></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="">Huevos</a></li>
+                    <li><a href="{{ url('huevos')}}">Huevos</a></li>
                     {{-- <li>
                         <a href="javascript:void(0)" class="waves-effect">Inbox<span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">

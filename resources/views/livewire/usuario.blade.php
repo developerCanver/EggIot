@@ -64,13 +64,26 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="exampleFormControlInput2">Tipo Usuario</label>
-                            <select wire:model="rol_id">
+                            <select wire:model="rol_id" class="form-control">
                                 <option value="" selected>Seleccione Tipo usuario...</option>
                                 @foreach ($roles as $rol)
                                 <option value="{{$rol->id_rol}}">{{$rol->nameRol}}</option>
                                 @endforeach
                             </select>
                             @error('rol_id') <span class="text-danger">{{ $message }}</span>@enderror
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput2">Distribuidora</label>
+                            <select wire:model="distribuidora_id" class="form-control">
+                                <option value="" selected>Seleccione Distribuidora...</option>
+                                @foreach ($distribuidoras as $distribuidora)
+                                <option value="{{$distribuidora->id_distributor }}">{{$distribuidora->nameDistributor}}</option>
+                                @endforeach
+                            </select>
+                            @error('distribuidora_id') <span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -110,6 +123,7 @@
                                 <th>Nombre</th>
                                 <th>Correo</th>
                                 <th>Rol Usuario</th>
+                                <th>Distribuidora</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -121,6 +135,7 @@
                                 <td>{{$consulta->name}}</td>
                                 <td>{{$consulta->email}}</td>
                                 <td>{{$consulta->nameRol  }}</td>
+                                <td>{{$consulta->nameDistributor  }}</td>
 
                                 <td>
                                     <button data-toggle="modal" data-target="#updateModal"
@@ -179,17 +194,29 @@
                                     @error('profile_photo_path') <span
                                         class="text-danger">{{ $message }}</span>@enderror
                                 </div>
-
+                               
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput2">Tipo Usuario</label>
-                                        <select wire:model="rol_id">
+                                        <select wire:model="rol_id" class="form-control">
                                             <option value="" selected>Seleccione Tipo usuario...</option>
                                             @foreach ($roles as $rol)
-                                            <option value="{{$rol->id}}">{{$rol->nameRol}}</option>
+                                            <option value="{{$rol->id_rol}}">{{$rol->nameRol}}</option>
                                             @endforeach
                                         </select>
                                         @error('rol_id') <span class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput2">Distribuidora</label>
+                                        <select wire:model="distribuidora_id" class="form-control">
+                                            <option value="" selected>Seleccione Distribuidora...</option>
+                                            @foreach ($distribuidoras as $distribuidora)
+                                            <option value="{{$distribuidora->id_distributor }}">{{$distribuidora->nameDistributor}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('distribuidora_id') <span class="text-danger">{{ $message }}</span>@enderror
                                     </div>
                                 </div>
 
@@ -197,7 +224,7 @@
                                     <button type="button" style="background: #ffffff;color:#1a2942;"
                                         class="btn btn-secondary close-btn" data-dismiss="modal">Cancelar</button>
                                     <button type="button" wire:click.prevent="update({{ $primary }})"
-                                        class="btn btn-primary" data-dismiss="modal">Actualizar</button>
+                                        class="btn btn-primary" >Actualizar</button>
                                 </div>
                             </div>
                         </div>

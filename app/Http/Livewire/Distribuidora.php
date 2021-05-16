@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 class Distribuidora extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+   // protected $paginationTheme = 'bootstrap';
     
     public $isOpen=false;
   
@@ -34,9 +34,8 @@ class Distribuidora extends Component
 
     public function render()
     {
-       $consultas=  DB::table('distributors')
-                    ->join('users', 'users.id', 'distributors.user_id')
-                    ->paginate();
+       $consultas=  DB::table('distributors')               
+                    ->paginate(20);
                     //dd($consultas);
        $users = DB::table('users')
                     ->where('rol_id', '1')
@@ -44,7 +43,7 @@ class Distribuidora extends Component
 
         return view('livewire.distribuidora',[
             'consultas' => $consultas,
-            'users' => $users,
+            //'users' => $users,
         ]);
 
     }
@@ -54,7 +53,7 @@ class Distribuidora extends Component
             'nameDistributor' => 'required|min:3',
             'phone' => 'required',
             'direction' => 'required|min:3',
-            'user_id' => 'required',
+            
              ]);
             
              $guardar = new Distributor();
@@ -62,7 +61,7 @@ class Distribuidora extends Component
              $guardar->phone=$this->phone;
              $guardar->img='';
              $guardar->direction=$this->direction;
-             $guardar->user_id=$this->user_id;
+       
 
              $guardar->save();  
         $this->dispatchBrowserEvent('alert',
@@ -78,7 +77,7 @@ class Distribuidora extends Component
         $this->phone = $editar->phone;
         $this->img = $editar->img;
         $this->direction=$editar->direction;
-        $this->user_id=$editar->user_id;
+  
        
 
     }
@@ -89,7 +88,7 @@ class Distribuidora extends Component
             'nameDistributor' => 'required|min:3',
             'phone' => 'required',
             'direction' => 'required|min:3',
-            'user_id' => 'required',
+         
              ]);
         // dd($this->imagen_id);
          $guardar=Distributor::where('id_distributor',$id)->first();
@@ -98,7 +97,7 @@ class Distribuidora extends Component
         $guardar->phone=$this->phone;
         $guardar->img=$this->img;
         $guardar->direction=$this->direction;
-        $guardar->user_id=$this->user_id;
+      
         
         $guardar->update();
         $this->dispatchBrowserEvent('alert',
@@ -120,7 +119,6 @@ class Distribuidora extends Component
         $this->phone = '';
         $this->img = '';
         $this->direction = '';
-        $this->user_id = '';
         return redirect('/distribuidora');
     }
 

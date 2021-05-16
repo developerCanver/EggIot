@@ -23,7 +23,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
  //Peso
- Route::resource('/peso',    'Planeacion\RequisitosController');
+ //Route::resource('/peso',    'Planeacion\RequisitosController');
+
+
+ Route::get('/huevos', function () {
+    return view('egg');
+})->middleware('auth');
+
 
 Route::get('/distribuidora', function () {
     return view('distribuidora');

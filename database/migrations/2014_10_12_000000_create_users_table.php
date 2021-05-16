@@ -23,7 +23,12 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->unsignedBigInteger('rol_id');   
+            $table->unsignedBigInteger('distribuidora_id')->nullable();   
             $table->timestamps();
+            
+            $table->foreign('distribuidora_id')->references('id_distributor')->on('distributors')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             
             $table->foreign('rol_id')->references('id_rol')->on('role_users')
             ->onDelete('cascade')

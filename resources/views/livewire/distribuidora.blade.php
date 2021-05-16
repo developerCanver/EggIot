@@ -1,4 +1,10 @@
 <div>
+    <style>
+        nav svg{
+            height: 20px;
+        }
+    </style>
+
 
     <div class="row bg-title m-3">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -38,7 +44,7 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <input type="hidden" wire:model="user_id">
+                    
                         <label for="exampleFormControlInput1">Nombre:</label>
                         <input type="text" class="form-control" wire:model="nameDistributor">
                         @error('nameDistributor') <span class="text-danger">{{ $message }}</span>@enderror
@@ -54,18 +60,7 @@
                         @error('direction') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
 
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="exampleFormControlInput2">Tipo Usuario</label>
-                        <select wire:model="user_id">
-                            <option value="" selected>Seleccione Tipo usuario...</option>
-                            @foreach ($users as $user)
-                            <option value="{{$user->id}}">{{$user->name}}</option>
-                            @endforeach
-                        </select>
-                        @error('user_id') <span class="text-danger">{{ $message }}</span>@enderror
-                    </div>
-                </div>
+              
                 <div class="modal-footer">
                     <button type="button" style="background: #ffffff;color:#1a2942;" class="btn btn-secondary close-btn"
                         data-dismiss="modal">Cancelar</button>
@@ -102,8 +97,7 @@
                             <th>Nombre</th>
                             <th>Teléfono</th>
                             <th>Dirección</th>
-                            {{-- <th>Img</th> --}}
-                            <th>Usuario Admin</th>
+                         
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -119,7 +113,7 @@
                             <td>{{$consulta->phone}}</td>
                             <td>{{$consulta->direction}}</td>
                             {{-- <td>{{$consulta->img}}</td> --}}
-                            <td>{{$consulta->name }}</td>
+                         
 
                             <td>
                                 <button data-toggle="modal" data-target="#updateModal"
@@ -156,7 +150,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <input type="hidden" wire:model="user_id">
+                                   
                                     <label for="exampleFormControlInput1">Nombre:</label>
                                     <input type="text" class="form-control" wire:model="nameDistributor">
                                     @error('nameDistributor') <span class="text-danger">{{ $message }}</span>@enderror
@@ -175,24 +169,11 @@
                                 </div>
 
 
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlInput2">Tipo Usuario</label>
-                                        <select wire:model="user_id">
-                                            <option value="" selected>Seleccione Tipo usuario...</option>
-                                            @foreach ($users as $user)
-                                            <option value="{{$user->id}}">{{$user->name}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('user_id') <span class="text-danger">{{ $message }}</span>@enderror
-                                    </div>
-                                </div>
-
                                 <div class="modal-footer">
                                     <button type="button" style="background: #ffffff;color:#1a2942;" class="btn btn-secondary close-btn"
                                     data-dismiss="modal">Cancelar</button>
                                     <button type="button" wire:click.prevent="update({{ $primary }})"
-                                        class="btn btn-primary" data-dismiss="modal">Actualizar</button>
+                                        class="btn btn-primary" >Actualizar</button>
                                 </div>
                             </div>
                         </div>

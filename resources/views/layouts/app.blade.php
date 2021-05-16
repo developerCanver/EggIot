@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/plugins/images/favicon.png') }}">
     <title>Pixel Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap</title>
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Core CSS  preseta error para los mensajes -->
     <link href="{{ asset('assets/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Menu CSS -->
     <link href="{{ asset('assets/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css') }}" rel="stylesheet">
@@ -272,12 +272,18 @@
         <!-- Left navbar-header end -->
         <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="container-fluid">
-             
-                <!-- /.row -->
-               
+            <div class="container-fluid" style="padding: 30px;">
+                <div class="contenido" style="padding: 50px;
+                background: #fff;
+                border-radius: 22px 22px 22px 22px;
+                box-shadow: 1px 9px 13px 5px rgb(120 120 120 / 16%);
+                ">
+
+              
+            
                 <!-- CONTENIDO -->
                 @yield('content')
+            </div>
                 
             </div>
             <!-- /.container-fluid -->

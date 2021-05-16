@@ -16,7 +16,8 @@ class CreateEggsTable extends Migration
         Schema::create('eggs', function (Blueprint $table) {
             $table->bigIncrements('id_egg');
             $table->integer('code');
-            $table->string('weight');
+           // $table->string('weight');
+            $table->float('weight', 3, 1);
             $table->unsignedBigInteger('iots_id');   
             $table->timestamps();
             

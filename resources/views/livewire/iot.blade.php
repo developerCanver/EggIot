@@ -57,11 +57,12 @@
                         </div>
                         @error('status') <span class="text-danger">{{ $message }}</span>@enderror
                     </div>
+                    <br>
 
-                    <div class="col-md-12">
+                    <div class="mb-3">
                         <div class="form-group">
                             <label for="exampleFormControlInput2">Distribuidora</label>
-                            <select wire:model="distributor_id">
+                            <select wire:model="distributor_id" class="form-control">
                                 <option value="" selected>Seleccione Distribuidora...</option>
                                 @foreach ($distribuidoras as $distribuidora)
                                 <option value="{{$distribuidora->id_distributor}}">{{$distribuidora->nameDistributor}}</option>
@@ -178,11 +179,12 @@
                                     </div>
                                     @error('status') <span class="text-danger">{{ $message }}</span>@enderror
                                 </div>
+                                <br>
             
-                                <div class="col-md-12">
+                                <div class="mb-3">
                                     <div class="form-group">
                                         <label for="exampleFormControlInput2">Distribuidora</label>
-                                        <select wire:model="distributor_id">
+                                        <select wire:model="distributor_id" class="form-control">
                                             <option value="" selected>Seleccione Distribuidora...</option>
                                             @foreach ($distribuidoras as $distribuidora)
                                             <option value="{{$distribuidora->id_distributor}}">{{$distribuidora->nameDistributor}}</option>
@@ -196,7 +198,7 @@
                                     <button type="button" style="background: #ffffff;color:#1a2942;"
                                         class="btn btn-secondary close-btn" data-dismiss="modal">Cancelar</button>
                                     <button type="button" wire:click.prevent="update({{ $primary }})"
-                                        class="btn btn-primary" data-dismiss="modal">Actualizar</button>
+                                        class="btn btn-primary" >Actualizar</button>
                                 </div>
                             </div>
                         </div>

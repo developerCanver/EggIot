@@ -22,7 +22,10 @@ class EggFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'code' => $this->faker->numberBetween(1,999),
+            'weight' => $this->faker->numberBetween(50,99),
+            'iots_id' => $this->faker->numberBetween(1,6),
         ];
     }
 }
+
