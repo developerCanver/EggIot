@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Distributor;
 use App\Models\Iot as Iots;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\DB;
@@ -21,12 +22,27 @@ class Iot extends Component
 
      public function render()
      {
-        $consultas=  DB::table('iots')
-        ->join('distributors', 'distributors.id_distributor', 'iots.distributor_id')
-        ->paginate();
-        //->select( DB::raw( 'users.*' ) )
-      
-        $distribuidoras = Distributor::all();
+        $rol_user= Auth::User()->rol_id;
+        $distribuidora= Auth::User()->distribuidora_id;
+
+        if ($rol_user==1) {
+            $consultas=  DB::table('iots')
+                ->join('distributors', 'distributors.id_distributor', 'iots.distributor_id')
+                ->paginate();
+            $distribuidoras = Distributor::all();
+
+
+        }else{
+            $consultas=  DB::table('iots')
+                        ->join('distributors', 'distributors.id_distributor', 'iots.distributor_id')
+                        ->where('distributor_id',$distribuidora)  
+                        ->paginate();
+        $distribuidoras = Distributor::where('id_distributor',$distribuidora)->get();
+
+            
+        }
+
+
          return view('livewire.iot',[
             'consultas' => $consultas,
             'distribuidoras' => $distribuidoras,

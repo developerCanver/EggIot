@@ -1,5 +1,10 @@
-<div>
+<div  wire:poll>
+    <style>
+        .border {
+            border-radius: 7px;
+        }
 
+    </style>
     <div class="row bg-title m-3">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
             <h4 class="page-title">Inicio</h4>
@@ -15,77 +20,76 @@
         <!-- /.col-lg-12 -->
     </div>
 
-
- 
-   
-    <div class="row" style="background: #4f5467cf;">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="row">
+        <div class="col-md-12">
             <div class="white-box">
+
+                <h3 class="box-title">Selección Mediante Peso del Huevo Informacion General </h3>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    @if ( !empty($huevo))
+    <div class="row" style="background: #4f5467cf; -webkit-box-shadow: 0px 0px 6px 5px rgba(0,0,0,0.51); 
+        box-shadow: 0px 0px 6px 5px rgba(0,0,0,0.51);">
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="white-box border">
+                <h3 class="box-title">Peso Huevo Ingresado</h3>
+                <div class="text-right"> <span class="text-muted">{{$huevo->created_at}}</span>
+                    <h1 ><sup><i class="ti-arrow-up text-success"></i></sup>{{$huevo->weight}}</h1>
+                </div>
+         {{-- <span class="text-success">20%</span>
+                <div class="progress m-b-0">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100" style="width:20%;">
+                        <span class="sr-only">20% Complete</span>
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="white-box border">
+                <h3 class="box-title">Tipo Huevo Ingresado</h3>
+                <div class="text-right"> <span class="text-muted">Clasificación</span>
+                    <h1 >{{$clasificaion}}</h1>
+                </div>       
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="white-box border">
                 <h3 class="box-title">Huevos</h3>
                 <div class="text-right"> <span class="text-muted">Total</span>
-                    <h1><sup><i class="ti-arrow-up text-success"></i></sup>     {{$huevos}}</h1>
-                </div> 
-                {{-- <span class="text-success">20%</span>
-                <div class="progress m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="100" style="width:20%;">
-                        <span class="sr-only">20% Complete</span>
-                    </div>
-                </div> --}}
+                    {{-- <h1 class="counter"><sup><i class="ti-arrow-up text-success"></i></sup>{{$huevos}}</h1> --}}
+                    <h1 ><sup><i class="ti-arrow-up text-success"></i></sup>{{$huevos}}</h1>
+                </div>       
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="white-box">
+            <div class="white-box border">
                 <h3 class="box-title">Panales</h3>
                 <div class="text-right"> <span class="text-muted">Total</span>
-                    <h1><sup><i class="ti-arrow-up text-success"></i></sup>  {{$panales}}</h1>
-                </div> 
-                {{-- <span class="text-success">20%</span>
-                <div class="progress m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="100" style="width:20%;">
-                        <span class="sr-only">20% Complete</span>
-                    </div>
-                </div> --}}
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <h3 class="box-title">Usuarios</h3>
-                <div class="text-right"> <span class="text-muted">Total</span>
-                    <h1><sup><i class="ti-arrow-up text-success"></i></sup>  {{$usuarios}}</h1>
-                </div> 
-                {{-- <span class="text-success">20%</span>
-                <div class="progress m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="100" style="width:20%;">
-                        <span class="sr-only">20% Complete</span>
-                    </div>
-                </div> --}}
-            </div>
-        </div>
+                    <h1 ><sup><i class="ti-arrow-up text-success"></i></sup>{{$panales}}</h1>
+                </div>
        
-        
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <h3 class="box-title">Distribuidoras</h3>
-                <div class="text-right"> <span class="text-muted">Total </span>
-                    <h1><sup><i class="ti-arrow-up text-success"></i></sup> {{$distribuidoras}}</h1>
-                </div> 
-                {{-- <span class="text-success">20%</span>
-                <div class="progress m-b-0">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="100" style="width:20%;">
-                        <span class="sr-only">20% Complete</span>
-                    </div>
-                </div> --}}
             </div>
         </div>
-     
+ 
 
-   
-  
     </div>
+    @else
+    <br><br>
+    <div class="container m-5">
+        <div class="alert alert-primary" role="alert">
+            <p class="text-center m-3"> Ups! no hay registros.
+                </p>
+        </div>
+    </div>
+    <br><br>
+    @endif
     <br>
     <br>
 

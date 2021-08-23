@@ -14,4 +14,14 @@ class Egg extends Model
         'weight',
         'iots_id',
     ];
+
+    public function scopeFecha($query, $de,$hasta){
+ 
+        if(!$hasta){
+            $hasta = date('Y-m-d');
+        }
+        $hasta =date("Y-m-d",strtotime($hasta."+ 1 days"));
+        if($de)
+        return $query->whereBetween('created_at', [$de,$hasta]);
+    }
 }

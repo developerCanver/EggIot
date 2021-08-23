@@ -33,7 +33,7 @@
             <div class="modal-content">
                 <div class="modal-header bg-success">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Agregar Usuario</h4>
+                    <h4 class="modal-title">Agregar Iot</h4>
                 </div>
                 <div class="modal-body">
 

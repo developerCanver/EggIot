@@ -131,7 +131,15 @@
                             @foreach ($consultas as $consulta)
                             <tr>
                                 <td>{{$consulta->id}}</td>
-                                <td>{{$consulta->profile_photo_path}}</td>
+                                <td>
+                                    @if ($consulta->profile_photo_path)
+                                        
+                                    <img style="width: 80px;" class="img-circle" alt="user" src="/img/users/{{$consulta->profile_photo_path}}" >
+                                    @else
+                                        no se ha cargado
+                                    @endif
+
+                                </td>
                                 <td>{{$consulta->name}}</td>
                                 <td>{{$consulta->email}}</td>
                                 <td>{{$consulta->nameRol  }}</td>

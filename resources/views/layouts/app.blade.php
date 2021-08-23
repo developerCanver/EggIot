@@ -28,7 +28,7 @@
     <!-- color CSS -->
     <link href="{{ asset('css/colors/default.css') }}" id="theme" rel="stylesheet">
 
- 
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script> --}}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -66,7 +66,7 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
                     <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
                             <i class="icon-envelope"></i>
                             <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
@@ -112,9 +112,9 @@
                             </li>
                         </ul>
                         <!-- /.dropdown-messages -->
-                    </li>
+                    </li> --}}
                     <!-- /.dropdown -->
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
                             <i class="icon-note"></i>
                             <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
@@ -169,7 +169,7 @@
                             </li>
                         </ul>
                         <!-- /.dropdown-tasks -->
-                    </li>
+                    </li> --}}
                     <!-- /.dropdown -->
                    
                 </ul>

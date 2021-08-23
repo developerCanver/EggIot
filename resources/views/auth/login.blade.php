@@ -45,7 +45,7 @@
                                 <p>Don't have an account? <a href="register.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
                             </div>  --}}
                             <div class="col-sm-12 text-center">
-                                <p>EggIot</p>
+                                <img style="width: 40%;" src="{{ asset('assets/plugins/images/Egg-Logo.png') }}" alt="home" class="light-logo" />
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
-                                <button class="btn btn-info btn-lg btn-block  waves-effect waves-light"
+                                <button style="background: #4f5467;" class="btn btn-info btn-lg btn-block  waves-effect waves-light"
                                     type="submit">Acceder</button>
                             </div>
                         </div>
