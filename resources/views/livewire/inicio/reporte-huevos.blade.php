@@ -3,7 +3,8 @@
         <div class="col-11">
             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal"
                 data-whatever="@mdo">Agregar Huevo</button>
-                <a title="Descargar Excel" ref="{{ url('/ExportarUSer')}}" class="btn btn-success">
+                
+                <a  href="{{ url('/ExportarUSer')}}" class="btn btn-success" title="Descargar Excel">
                     <i class="fa fa-file-pdf-o"></i>
                 </a>
         </div>
@@ -69,8 +70,7 @@
                                 {{-- <th>Codigo </th> --}}
                                 <th>Peso</th>
                                 <th>Iot </th>
-                                <th>Fecha y Hora</th>
-                       
+                                <th>Fecha y Hora</th>                       
                                 <th>Opción</th>
 
                             </tr>

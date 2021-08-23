@@ -15,7 +15,7 @@ use Maatwebsite\Excel\Facades\Excel;
 |
 */
 
-Route::get('/ExportarUSer', function () {
+Route::get('ExportarUSer', function () {
     return Excel::download(new UsersExport, 'Huevos.xlsx');
 })->middleware('auth');
 
