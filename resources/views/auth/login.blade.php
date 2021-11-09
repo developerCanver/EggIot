@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,13 +40,14 @@
                 <form class="form-horizontal form-material" id="loginform" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="row">
-                      
+
                         <div class="form-group m-b-0">
                             {{-- <div class="col-sm-12 text-center">
                                 <p>Don't have an account? <a href="register.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
                             </div>  --}}
                             <div class="col-sm-12 text-center">
-                                <img style="width: 40%;" src="{{ asset('assets/plugins/images/Egg-Logo.png') }}" alt="home" class="light-logo" />
+                                <img style="width: 40%;" src="{{ asset('assets/plugins/images/Egg-Logo.png') }}"
+                                    alt="home" class="light-logo" />
                             </div>
                         </div>
                     </div>
@@ -69,30 +71,34 @@
                                 <input id="checkbox-signup" type="checkbox" id="remember_me" name="remember">
                                 <label for="checkbox-signup"> Recuérdame</label>
                             </div>
-                           <a href="{{URL('/forgot-password')}}" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> ¿Olvidaste tu contraseña?</a> </div>
-                        </div>
-                        <div class="form-group text-center m-t-20">
-                            <div class="col-xs-12">
-                                <button style="background: #4f5467;" class="btn btn-info btn-lg btn-block  waves-effect waves-light"
-                                    type="submit">Acceder</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-                                {{-- <div class="social"><a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip"  title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a> <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip"  title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a> </div>
-                              </div> --}}
-                            </div>
-                            <div class="form-group m-b-0">
-                                <div class="col-sm-12 text-center">
-                                    <p>Don't have an account? <a href="register.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
-                                </div>  
-                               
-                            </div>
+                            <a href="{{URL('/forgot-password')}}" id="to-recover" class="text-dark pull-right"><i
+                                    class="fa fa-lock m-r-5"></i> ¿Olvidaste tu contraseña?</a>
                         </div>
                     </div>
-                </form>
- 
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            <button style="background: #4f5467;"
+                                class="btn btn-info btn-lg btn-block  waves-effect waves-light"
+                                type="submit">Acceder</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+                            {{-- <div class="social"><a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip"  title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a> <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip"  title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a> </div>
+                              </div> --}}
+                        </div>
+                        {{-- <div class="form-group m-b-0">
+                            <div class="col-sm-12 text-center">
+                                <p>Don't have an account? <a href="register.html" class="text-primary m-l-5"><b>Sign
+                                            Up</b></a></p>
+                            </div>
+
+                        </div> --}}
+                    </div>
             </div>
+            </form>
+
+        </div>
         </div>
     </section>
     <!-- jQuery -->
@@ -111,4 +117,5 @@
     <!--Style Switcher -->
     <script src="assets/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
+
 </html>

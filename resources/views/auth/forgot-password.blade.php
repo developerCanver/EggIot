@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <!-- Mirrored from www.wrappixel.com/demos/admin-templates/pixeladmin/inverse/recoverpw.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Feb 2019 12:04:13 GMT -->
 <head>
@@ -46,8 +46,15 @@
         </div>
         <div class="form-group text-center m-t-20">
           <div class="col-xs-12">
-            <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
+            <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Enviar</button>
           </div>
+          
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">             
+                <a href="{{URL('/login')}}" id="to-recover" class="text-dark pull-right"><i
+                        class=" ti-back-left"></i> Volver</a>
+            </div>
         </div>
       </form>
     </div>
