@@ -69,7 +69,7 @@
                                 <input id="checkbox-signup" type="checkbox" id="remember_me" name="remember">
                                 <label for="checkbox-signup"> Recuérdame</label>
                             </div>
-                            {{-- <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a> </div> --}}
+                           <a href="{{URL('/forgot-password')}}" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> ¿Olvidaste tu contraseña?</a> </div>
                         </div>
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
@@ -83,9 +83,9 @@
                               </div> --}}
                             </div>
                             <div class="form-group m-b-0">
-                                {{-- <div class="col-sm-12 text-center">
+                                <div class="col-sm-12 text-center">
                                     <p>Don't have an account? <a href="register.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
-                                </div>  --}}
+                                </div>  
                                
                             </div>
                         </div>
